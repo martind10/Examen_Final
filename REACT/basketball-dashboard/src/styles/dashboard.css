@@ -23,3 +23,97 @@ body{
   width: 100%;
   max-width: 1100px;
 }
+
+.dashboard__header{
+  background: rgba(8, 10, 30, 0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 25px;
+  padding: 25px 40px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+}
+
+.scoreboard{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreboard__team{
+  width: 180px;
+}
+
+.scoreboard__team--right{
+  text-align: right;
+}
+
+.scoreboard__name{
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.scoreboard__description{
+  font-size: 14px;
+  color: #a1a1c4;
+  margin-top: 5px;
+}
+
+.scoreboard__score{
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.scoreboard__score--yellow{
+  color: #f7b500;
+}
+
+.scoreboard__score--blue{
+  color: #71d8d1;
+}
+
+.scoreboard__separator{
+  color: #8d94aa;
+  margin: 0 10px;
+}
+
+.scoreboard__badge{
+  background: #f7b500;
+  color: #111;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.scoreboard__arena{
+  font-size: 14px;
+  color: #c7c7d8;
+}
+
+.players-table{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.players-table thead{
+  background: #22273d;
+}
+
+.players-table th{
+  padding: 22px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.players-table td{
+  padding: 24px 22px;
+  background: white;
+  color: #111;
+  border-bottom: 1px solid #dcdcdc;
+  font-size: 17px;
+}

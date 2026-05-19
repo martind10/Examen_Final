@@ -1,3 +1,6 @@
+import Header from './components/Header/Header'
+import PlayersTable from './components/PlayersTable/PlayersTable'
+
 function App(){
 
   return(
@@ -6,9 +9,9 @@ function App(){
 
       <section className="dashboard__container">
 
-        <h1>
-          React funcionando 🚀
-        </h1>
+        <Header />
+
+        <PlayersTable />
 
       </section>
 
