@@ -1,6 +1,4 @@
-import players from '../../data/players'
-
-function PlayersTable(){
+function PlayersTable({ players, toggleFavorite }){
 
   return(
 
@@ -35,7 +33,16 @@ function PlayersTable(){
               <tr key={player.id}>
 
                 <td>
-                  {player.favorite ? '⭐' : '☆'}
+
+                  <button
+                    className="players-table__favorite"
+                    onClick={() => toggleFavorite(player.id)}
+                  >
+
+                    {player.favorite ? '⭐' : '☆'}
+
+                  </button>
+
                 </td>
 
                 <td>
