@@ -3,14 +3,19 @@ import { useState } from 'react'
 import Header from './components/Header/Header'
 import SearchBar from './components/SearchBar/SearchBar'
 import PlayersTable from './components/PlayersTable/PlayersTable'
+import History from './components/History/History'
 
 import playersData from './data/players'
+
+import StatsCards from './components/StatsCards/StatsCards'
 
 function App(){
 
   const [players, setPlayers] = useState(playersData)
 
   const [search, setSearch] = useState('')
+
+  const [history, setHistory] = useState([])
 
   const toggleFavorite = (id) => {
 
@@ -30,6 +35,27 @@ function App(){
     })
 
     setPlayers(updatedPlayers)
+
+  }
+
+  const handleSearch = (value) => {
+
+    setSearch(value)
+
+    if(
+      value.trim() !== '' &&
+      !history.includes(value)
+    ){
+
+      setHistory([value, ...history])
+
+    }
+
+  }
+
+  const clearHistory = () => {
+
+    setHistory([])
 
   }
 
@@ -53,7 +79,14 @@ function App(){
 
           <SearchBar
             search={search}
-            setSearch={setSearch}
+            setSearch={handleSearch}
+          />
+
+          <StatsCards players={filteredPlayers} />
+
+          <History
+            history={history}
+            clearHistory={clearHistory}
           />
 
           <PlayersTable
