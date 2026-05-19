@@ -6,20 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="basketball, dashboard, estadisticas, bootstrap, react, html, css, bem">
   <meta name="author" content="Martin">
-
-  <meta name="description" content="Dashboard de estadísticas de baloncesto con HTML, CSS, Bootstrap y BEM">
+  <meta name="description" content="Dashboard de estadísticas de baloncesto">
 
   <title>Basketball Dashboard</title>
 
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../Examen Final/css/style.css">
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
 </head>
 
 <body>
@@ -33,6 +26,7 @@
         <div class="scoreboard">
 
           <div class="scoreboard__team">
+
             <h2 class="scoreboard__name">
               TCB
             </h2>
@@ -40,13 +34,14 @@
             <p class="scoreboard__description">
               TOP CLUB FLAMES
             </p>
+
           </div>
 
           <div class="scoreboard__center">
 
             <h1 class="scoreboard__score">
 
-              <span>
+              <span class="scoreboard__score--yellow">
                 98
               </span>
 
@@ -54,7 +49,7 @@
                 —
               </span>
 
-              <span>
+              <span class="scoreboard__score--blue">
                 92
               </span>
 
@@ -74,6 +69,18 @@
 
           </div>
 
+          <div class="scoreboard__time">
+
+            <span class="scoreboard__badge">
+              Q4 · 01:12
+            </span>
+
+            <p class="scoreboard__arena">
+              ARENA CENTRAL · 18 NOV
+            </p>
+
+          </div>
+
         </div>
 
       </header>
@@ -86,165 +93,149 @@
             BUSCAR JUGADORES
           </label>
 
-          <input
-            type="text"
-            class="stats-panel__input form-control"
-            placeholder="Escribe un nombre o equipo..."
-          >
+          <div class="stats-panel__search-box">
 
-        </div>
+            <span class="stats-panel__icon">
+              🔍
+            </span>
 
-        <div class="stats-panel__cards row g-3">
-
-          <div class="col-lg-2 col-md-6">
-
-            <article class="stat-card stat-card--yellow">
-
-              <p class="stat-card__title">
-                JUGADORES EN TABLA
-              </p>
-
-              <h2 class="stat-card__number">
-                20
-              </h2>
-
-              <span class="stat-card__badge">
-                Favoritos: 3
-              </span>
-
-            </article>
-
-          </div>
-
-          <div class="col-lg-2 col-md-6">
-
-            <article class="stat-card">
-
-              <p class="stat-card__title">
-                PROMEDIO DE PUNTOS
-              </p>
-
-              <h2 class="stat-card__number">
-                16.6
-              </h2>
-
-              <span class="stat-card__text">
-                Por jugador
-              </span>
-
-            </article>
-
-          </div>
-
-          <div class="col-lg-2 col-md-6">
-
-            <article class="stat-card">
-
-              <p class="stat-card__title">
-                PROMEDIO DE REBOTES
-              </p>
-
-              <h2 class="stat-card__number">
-                6.8
-              </h2>
-
-              <span class="stat-card__text">
-                Por jugador
-              </span>
-
-            </article>
-
-          </div>
-
-          <div class="col-lg-2 col-md-6">
-
-            <article class="stat-card">
-
-              <p class="stat-card__title">
-                LÍDERES
-              </p>
-
-              <div class="stat-card__leader">
-
-                <strong>
-                  Anotador
-                </strong>
-
-                <p>
-                  Kevin Harrell - 24.5 pts
-                </p>
-
-              </div>
-
-              <div class="stat-card__leader">
-
-                <strong>
-                  Eficiencia
-                </strong>
-
-                <p>
-                  Kevin Harrell - 27.4 PER
-                </p>
-
-              </div>
-
-            </article>
-
-          </div>
-
-          <div class="col-lg-2 col-md-6">
-
-            <article class="stat-card">
-
-              <div class="stat-card__history">
-
-                <div>
-
-                  <p class="stat-card__title">
-                    HISTORIAL DE BÚSQUEDA
-                  </p>
-
-                </div>
-
-                <button class="stat-card__button">
-                  Limpiar
-                </button>
-
-              </div>
-
-              <div class="stat-card__tags">
-
-                <span class="stat-card__tag">
-                  bryan
-                </span>
-
-                <span class="stat-card__tag">
-                  bry
-                </span>
-
-                <span class="stat-card__tag">
-                  br
-                </span>
-
-              </div>
-
-            </article>
+            <input
+              type="text"
+              class="stats-panel__input"
+              placeholder="Escribe un nombre o equipo..."
+            >
 
           </div>
 
         </div>
 
-        <div class="table-buttons">
+        <div class="stats-panel__cards">
 
-          <button class="table-buttons__button">
+          <article class="stat-card stat-card--yellow">
+
+            <p class="stat-card__title">
+              JUGADORES EN TABLA
+            </p>
+
+            <h2 class="stat-card__number">
+              20
+            </h2>
+
+            <span class="stat-card__badge">
+              Favoritos: 3
+            </span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <p class="stat-card__title">
+              PROMEDIO DE PUNTOS
+            </p>
+
+            <h2 class="stat-card__number">
+              16.6
+            </h2>
+
+            <span class="stat-card__text">
+              Por jugador
+            </span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <p class="stat-card__title">
+              PROMEDIO DE REBOTES
+            </p>
+
+            <h2 class="stat-card__number">
+              6.8
+            </h2>
+
+            <span class="stat-card__text">
+              Por jugador
+            </span>
+
+          </article>
+
+          <article class="stat-card">
+
+            <p class="stat-card__title">
+              LÍDERES
+            </p>
+
+            <div class="stat-card__leader">
+
+              <strong>
+                Anotador
+              </strong>
+
+              <p>
+                Kevin Harrell - 24.5 pts
+              </p>
+
+            </div>
+
+            <div class="stat-card__leader">
+
+              <strong>
+                Eficiencia
+              </strong>
+
+              <p>
+                Kevin Harrell - 27.4 PER
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="stat-card stat-card--history">
+
+            <div class="stat-card__history-top">
+
+              <p class="stat-card__title">
+                HISTORIAL DE BÚSQUEDA
+              </p>
+
+              <button class="stat-card__clear">
+                Limpiar
+              </button>
+
+            </div>
+
+            <div class="stat-card__tags">
+
+              <span class="stat-card__tag">
+                bryan
+              </span>
+
+              <span class="stat-card__tag">
+                bry
+              </span>
+
+              <span class="stat-card__tag">
+                br
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="table-actions">
+
+          <button class="table-actions__button">
             FILAS PARES
           </button>
 
-          <button class="table-buttons__button">
+          <button class="table-actions__button">
             FILAS IMPARES
           </button>
 
-          <button class="table-buttons__button">
+          <button class="table-actions__button">
             LIMPIAR RESALTADO
           </button>
 
@@ -252,97 +243,165 @@
 
         <div class="table-responsive">
 
-          <table class="table players-table">
+          <table class="players-table">
 
-            <thead class="players-table__head">
+            <thead>
 
               <tr>
 
-                <th>
-                  FAV
-                </th>
-
-                <th>
-                  #
-                </th>
-
-                <th>
-                  JUGADOR
-                </th>
-
-                <th>
-                  EQUIPO
-                </th>
-
-                <th>
-                  POSICIÓN
-                </th>
-
-                <th>
-                  PTS
-                </th>
-
-                <th>
-                  REB
-                </th>
-
-                <th>
-                  AST
-                </th>
-
-                <th>
-                  EFICIENCIA
-                </th>
+                <th>FAV</th>
+                <th>#</th>
+                <th>JUGADOR</th>
+                <th>EQUIPO</th>
+                <th>POSICIÓN</th>
+                <th>PTS</th>
+                <th>REB</th>
+                <th>AST</th>
+                <th>EFICIENCIA</th>
 
               </tr>
 
             </thead>
 
-            <tbody class="players-table__body">
+            <tbody>
 
               <tr>
 
-                <td>
-                  ⭐
-                </td>
+                <td>⭐</td>
+                <td>03</td>
+                <td>Kevin Harrell</td>
+                <td>Top Club</td>
+                <td>Guard</td>
+                <td>24.5</td>
+                <td>4.1</td>
+                <td>6.8</td>
+                <td>27.4</td>
 
-                <td>
-                  03
-                </td>
+              </tr>
 
-                <td>
-                  Kevin Harrell
-                </td>
+              <tr>
 
-                <td>
-                  Top Club
-                </td>
+                <td>☆</td>
+                <td>05</td>
+                <td>James Fletcher</td>
+                <td>Top Club</td>
+                <td>Center</td>
+                <td>18.9</td>
+                <td>11.7</td>
+                <td>2.4</td>
+                <td>25.1</td>
 
-                <td>
-                  Guard
-                </td>
+              </tr>
 
-                <td>
-                  24.5
-                </td>
+              <tr>
 
-                <td>
-                  4.1
-                </td>
+                <td>⭐</td>
+                <td>14</td>
+                <td>Jonas Montes</td>
+                <td>Top Club</td>
+                <td>Forward-Guard</td>
+                <td>21.2</td>
+                <td>6.5</td>
+                <td>4.9</td>
+                <td>24.8</td>
 
-                <td>
-                  6.8
-                </td>
+              </tr>
 
-                <td>
-                  27.4
-                </td>
+              <tr>
+
+                <td>☆</td>
+                <td>00</td>
+                <td>Andre Wallace</td>
+                <td>Top Club</td>
+                <td>Guard</td>
+                <td>18.3</td>
+                <td>3.8</td>
+                <td>6.5</td>
+                <td>24.2</td>
+
+              </tr>
+
+              <tr>
+
+                <td>☆</td>
+                <td>30</td>
+                <td>Scott Dale</td>
+                <td>Top Club</td>
+                <td>Forward</td>
+                <td>19.6</td>
+                <td>7.2</td>
+                <td>3.8</td>
+                <td>23.7</td>
 
               </tr>
 
             </tbody>
 
           </table>
+
+        </div>
+
+        <div class="table-footer">
+
+          <div class="table-footer__left">
+
+            <span>
+              MOSTRAR
+            </span>
+
+            <select class="table-footer__select">
+
+              <option>
+                5 por página
+              </option>
+
+              <option>
+                10 por página
+              </option>
+
+              <option>
+                15 por página
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="pagination">
+
+            <button class="pagination__button">
+              «
+            </button>
+
+            <button class="pagination__button">
+              ‹
+            </button>
+
+            <button class="pagination__button pagination__button--active">
+              1
+            </button>
+
+            <button class="pagination__button">
+              2
+            </button>
+
+            <button class="pagination__button">
+              3
+            </button>
+
+            <button class="pagination__button">
+              4
+            </button>
+
+            <button class="pagination__button">
+              ›
+            </button>
+
+            <button class="pagination__button">
+              »
+            </button>
+
+          </div>
 
         </div>
 
