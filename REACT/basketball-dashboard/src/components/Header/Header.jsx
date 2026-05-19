@@ -2,67 +2,26 @@ function Header(){
 
   return(
 
-    <header className="dashboard__header">
+    <header className="dashboard-header">
 
-      <div className="scoreboard">
+      <span className="dashboard-header__tag">
 
-        <div className="scoreboard__team">
+        TOP CLUB / BASKETBALL
 
-          <h2 className="scoreboard__name">
-            TCB
-          </h2>
+      </span>
 
-          <p className="scoreboard__description">
-            TOP CLUB FLAMES
-          </p>
+      <h1 className="dashboard-header__title">
 
-        </div>
+        Central de Rendimiento
 
-        <div className="scoreboard__center">
+      </h1>
 
-          <h1 className="scoreboard__score">
+      <p className="dashboard-header__text">
 
-            <span className="scoreboard__score--yellow">
-              98
-            </span>
+        Administra convocatorias, analiza métricas clave
+        y mantén la intensidad de juego en cada partido.
 
-            <span className="scoreboard__separator">
-              —
-            </span>
-
-            <span className="scoreboard__score--blue">
-              92
-            </span>
-
-          </h1>
-
-        </div>
-
-        <div className="scoreboard__team scoreboard__team--right">
-
-          <h2 className="scoreboard__name">
-            RIV
-          </h2>
-
-          <p className="scoreboard__description">
-            RIVAL ALL-STARS
-          </p>
-
-        </div>
-
-        <div className="scoreboard__time">
-
-          <span className="scoreboard__badge">
-            Q4 · 01:12
-          </span>
-
-          <p className="scoreboard__arena">
-            ARENA CENTRAL · 18 NOV
-          </p>
-
-        </div>
-
-      </div>
+      </p>
 
     </header>
 

@@ -4,7 +4,9 @@ function PlayersTable({
   toggleFavorite,
 
   highlightEven,
-  highlightOdd
+  highlightOdd,
+
+  setSelectedPlayer
 
 }){
 

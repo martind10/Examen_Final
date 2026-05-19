@@ -4,14 +4,11 @@ import Header from './components/Header/Header'
 import SearchBar from './components/SearchBar/SearchBar'
 import PlayersTable from './components/PlayersTable/PlayersTable'
 import History from './components/History/History'
+import StatsCards from './components/StatsCards/StatsCards'
+import Pagination from './components/Pagination/Pagination'
+import PlayerCard from './components/PlayerCard/PlayerCard'
 
 import playersData from './data/players'
-
-import StatsCards from './components/StatsCards/StatsCards'
-
-import Pagination from './components/Pagination/Pagination'
-
-import PlayerCard from './components/PlayerCard/PlayerCard'
 
 function App(){
 
@@ -77,9 +74,9 @@ function App(){
 
   const clearHighlights = () => {
 
-  setHighlightEven(false)
+    setHighlightEven(false)
 
-  setHighlightOdd(false)
+    setHighlightOdd(false)
 
   }
 
@@ -96,8 +93,8 @@ function App(){
   const firstIndex = lastIndex - rowsPerPage
 
   const currentPlayers = filteredPlayers.slice(
-  firstIndex,
-  lastIndex
+    firstIndex,
+    lastIndex
   )
 
   return(
@@ -108,20 +105,30 @@ function App(){
 
       <section className="dashboard__container">
 
-        <Header />
+        <div className="dashboard__top">
 
-        <div className="theme-toggle">
+          <Header />
 
-          <button
-            className="theme-toggle__button"
-            onClick={() => setLightMode(!lightMode)}
-          >
+          <div className="theme-toggle">
 
-    {lightMode ? '🌙 Dark' : '☀ Light'}
+            <button
+              className="theme-toggle__button"
+              onClick={() =>
+                setLightMode(!lightMode)
+              }
+            >
 
-  </button>
+              {
+                lightMode
+                ? '🌙 Modo oscuro'
+                : '☀ Modo claro'
+              }
 
-</div>
+            </button>
+
+          </div>
+
+        </div>
 
         <section className="stats-panel">
 
@@ -139,40 +146,49 @@ function App(){
 
           <PlayerCard
             selectedPlayer={selectedPlayer}
+            setSelectedPlayer={setSelectedPlayer}
           />
 
           <div className="table-actions">
 
-          <button className="table-actions__button" onClick={() => {
+            <button
+              className="table-actions__button"
+              onClick={() => {
 
-            setHighlightEven(true)
-            setHighlightOdd(false)
+                setHighlightEven(true)
+                setHighlightOdd(false)
 
-          }}
-          >
+              }}
+            >
 
-           FILAS PARES
+              FILAS PARES
 
-          </button>
+            </button>
 
-          <button className="table-actions__button" onClick={() => {
-            setHighlightOdd(true)
-            setHighlightEven(false)
+            <button
+              className="table-actions__button"
+              onClick={() => {
 
-          }}
-          >
+                setHighlightOdd(true)
+                setHighlightEven(false)
 
-          FILAS IMPARES
+              }}
+            >
 
-          </button>
+              FILAS IMPARES
 
-          <button className="table-actions__button" onClick={clearHighlights}>
+            </button>
 
-        LIMPIAR RESALTADO
+            <button
+              className="table-actions__button"
+              onClick={clearHighlights}
+            >
 
-        </button>
+              LIMPIAR RESALTADO
 
-        </div>
+            </button>
+
+          </div>
 
           <PlayersTable
             players={currentPlayers}
@@ -180,7 +196,6 @@ function App(){
             highlightEven={highlightEven}
             highlightOdd={highlightOdd}
             setSelectedPlayer={setSelectedPlayer}
-            setSelectedPlayer
           />
 
           <Pagination

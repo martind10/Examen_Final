@@ -1,4 +1,9 @@
-function PlayerCard({ selectedPlayer }){
+function PlayerCard({
+
+  selectedPlayer,
+  setSelectedPlayer
+
+}){
 
   if(!selectedPlayer){
 
@@ -8,37 +13,124 @@ function PlayerCard({ selectedPlayer }){
 
   return(
 
-    <div className="player-card">
+    <div className="player-modal">
 
-      <h3 className="player-card__name">
+      <div
+        className="player-modal__overlay"
+        onClick={() =>
+          setSelectedPlayer(null)
+        }
+      >
 
-        {selectedPlayer.player}
+        <div
+          className="player-modal__content"
+          onClick={(e) =>
+            e.stopPropagation()
+          }
+        >
 
-      </h3>
+          <button
+            className="player-modal__close"
+            onClick={() =>
+              setSelectedPlayer(null)
+            }
+          >
 
-      <p>
-        Equipo: {selectedPlayer.team}
-      </p>
+            ✕
 
-      <p>
-        Posición: {selectedPlayer.position}
-      </p>
+          </button>
 
-      <p>
-        PTS: {selectedPlayer.pts}
-      </p>
+          <div className="player-modal__header">
 
-      <p>
-        REB: {selectedPlayer.reb}
-      </p>
+            <div>
 
-      <p>
-        AST: {selectedPlayer.ast}
-      </p>
+              <h2 className="player-modal__name">
 
-      <p>
-        Eficiencia: {selectedPlayer.efficiency}
-      </p>
+                {selectedPlayer.player}
+
+              </h2>
+
+              <span className="player-modal__position">
+
+                {selectedPlayer.position}
+
+              </span>
+
+            </div>
+
+          </div>
+
+          <div className="player-modal__info">
+
+            <div className="player-modal__item">
+
+              <p>Equipo</p>
+
+              <strong>
+                {selectedPlayer.team}
+              </strong>
+
+            </div>
+
+            <div className="player-modal__item">
+
+              <p>Número</p>
+
+              <strong>
+                #{selectedPlayer.number}
+              </strong>
+
+            </div>
+
+            <div className="player-modal__item">
+
+              <p>Asistencias</p>
+
+              <strong>
+                {selectedPlayer.ast}
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div className="player-modal__stats">
+
+            <div className="player-modal__card">
+
+              <span>PUNTOS</span>
+
+              <strong>
+                {selectedPlayer.pts}
+              </strong>
+
+            </div>
+
+            <div className="player-modal__card">
+
+              <span>REBOTES</span>
+
+              <strong>
+                {selectedPlayer.reb}
+              </strong>
+
+            </div>
+
+            <div className="player-modal__card player-modal__card--light">
+
+              <span>EFICIENCIA</span>
+
+              <strong>
+                {selectedPlayer.efficiency}
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
