@@ -130,7 +130,7 @@ function App(){
 
         </div>
 
-        <section className="stats-panel">
+        <section className="stats-panel container-fluid">
 
           <SearchBar
             search={search}
@@ -149,10 +149,10 @@ function App(){
             setSelectedPlayer={setSelectedPlayer}
           />
 
-          <div className="table-actions">
+          <div className="table-actions d-flex flex-wrap">
 
             <button
-              className="table-actions__button"
+              className="table-actions__button btn"
               onClick={() => {
 
                 setHighlightEven(true)

@@ -45,6 +45,7 @@ function History({ history, clearHistory }){
       </div>
 
     </article>
+    <h1>HOLA <PROFE></PROFE></h1>
 
   )
 
