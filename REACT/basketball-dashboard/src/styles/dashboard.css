@@ -268,3 +268,202 @@ body{
   font-size: 16px;
   line-height: 1.5;
 }
+
+.table-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-footer__left{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.table-footer__left span{
+  font-size: 20px;
+}
+
+.table-footer__select{
+  width: 190px;
+  height: 58px;
+  border-radius: 12px;
+  border: none;
+  padding: 0 15px;
+  font-size: 18px;
+}
+
+.pagination{
+  display: flex;
+}
+
+.pagination__button{
+  width: 58px;
+  height: 58px;
+  border: 1px solid #2d3350;
+  background: rgba(255,255,255,0.03);
+  color: white;
+  font-size: 22px;
+}
+
+.pagination__button--active{
+  background: #f7b500;
+  color: #111;
+  font-weight: bold;
+}
+
+.table-actions{
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.table-actions__button{
+  background: transparent;
+  border: 1px solid #555b7a;
+  color: white;
+  border-radius: 30px;
+  padding: 14px 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.table-actions__button:hover{
+  background: #f7b500;
+  color: #111;
+}
+
+.players-table__row--highlight td{
+  background: #f7c32f;
+  color: #111;
+}
+
+.stat-card{
+  transition: 0.3s;
+}
+
+.stat-card:hover{
+  transform: translateY(-5px);
+}
+
+.players-table tbody tr{
+  transition: 0.3s;
+}
+
+.players-table tbody tr:hover td{
+  background: #e9edf7;
+}
+
+.pagination__button{
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.pagination__button:hover{
+  background: #f7b500;
+  color: #111;
+}
+
+.table-footer__select{
+  cursor: pointer;
+}
+
+.players-table__favorite{
+  transition: 0.3s;
+}
+
+.players-table__favorite:hover{
+  transform: scale(1.2);
+}
+
+@media(max-width: 992px){
+
+  .scoreboard{
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .scoreboard__team{
+    width: 100%;
+  }
+
+  .scoreboard__team--right{
+    text-align: center;
+  }
+
+  .scoreboard__score{
+    font-size: 55px;
+  }
+
+  .stats-panel__cards{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-footer{
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+
+}
+
+@media(max-width: 768px){
+
+  .dashboard{
+    padding: 15px;
+  }
+
+  .dashboard__header{
+    padding: 25px;
+  }
+
+  .stats-panel{
+    padding: 20px;
+  }
+
+  .stats-panel__cards{
+    grid-template-columns: 1fr;
+  }
+
+  .table-actions{
+    flex-direction: column;
+  }
+
+  .table-actions__button{
+    width: 100%;
+  }
+
+  .players-table th{
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .players-table td{
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .stats-panel__input{
+    font-size: 18px;
+  }
+
+  .scoreboard__score{
+    font-size: 42px;
+  }
+
+  .scoreboard__name{
+    font-size: 34px;
+  }
+
+  .stat-card__number{
+    font-size: 50px;
+  }
+
+  .pagination{
+    flex-wrap: wrap;
+  }
+
+}

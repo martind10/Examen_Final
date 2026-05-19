@@ -1,4 +1,12 @@
-function PlayersTable({ players, toggleFavorite }){
+function PlayersTable({
+
+  players,
+  toggleFavorite,
+
+  highlightEven,
+  highlightOdd
+
+}){
 
   return(
 
@@ -30,7 +38,23 @@ function PlayersTable({ players, toggleFavorite }){
 
             players.map((player) => (
 
-              <tr key={player.id}>
+              <tr 
+              key={player.id} 
+              className={` 
+                ${
+                    highlightEven && player.id % 2 === 0
+                    ? 'players-table__row--highlight': ''
+                }
+
+                ${ 
+                    highlightOdd && player.id % 2 !== 0
+                    ? 'players-table__row--highlight'
+                    : ''
+                }
+
+            `}
+
+>
 
                 <td>
 

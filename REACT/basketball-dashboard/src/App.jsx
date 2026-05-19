@@ -9,6 +9,8 @@ import playersData from './data/players'
 
 import StatsCards from './components/StatsCards/StatsCards'
 
+import Pagination from './components/Pagination/Pagination'
+
 function App(){
 
   const [players, setPlayers] = useState(playersData)
@@ -16,6 +18,14 @@ function App(){
   const [search, setSearch] = useState('')
 
   const [history, setHistory] = useState([])
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const [rowsPerPage, setRowsPerPage] = useState(5)
+
+  const [highlightEven, setHighlightEven] = useState(false)
+
+  const [highlightOdd, setHighlightOdd] = useState(false)
 
   const toggleFavorite = (id) => {
 
@@ -59,12 +69,29 @@ function App(){
 
   }
 
+  const clearHighlights = () => {
+
+  setHighlightEven(false)
+
+  setHighlightOdd(false)
+
+  }
+
   const filteredPlayers = players.filter((player) =>
 
     player.player
       .toLowerCase()
       .includes(search.toLowerCase())
 
+  )
+
+  const lastIndex = currentPage * rowsPerPage
+
+  const firstIndex = lastIndex - rowsPerPage
+
+  const currentPlayers = filteredPlayers.slice(
+  firstIndex,
+  lastIndex
   )
 
   return(
@@ -89,9 +116,52 @@ function App(){
             clearHistory={clearHistory}
           />
 
+          <div className="table-actions">
+
+          <button className="table-actions__button" onClick={() => {
+
+            setHighlightEven(true)
+            setHighlightOdd(false)
+
+          }}
+          >
+
+           FILAS PARES
+
+          </button>
+
+          <button className="table-actions__button" onClick={() => {
+            setHighlightOdd(true)
+            setHighlightEven(false)
+
+          }}
+          >
+
+          FILAS IMPARES
+
+          </button>
+
+          <button className="table-actions__button" onClick={clearHighlights}>
+
+        LIMPIAR RESALTADO
+
+        </button>
+
+        </div>
+
           <PlayersTable
-            players={filteredPlayers}
+            players={currentPlayers}
             toggleFavorite={toggleFavorite}
+            highlightEven={highlightEven}
+            highlightOdd={highlightOdd}
+          />
+
+          <Pagination
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            rowsPerPage={rowsPerPage}
+            setRowsPerPage={setRowsPerPage}
+            totalPlayers={filteredPlayers.length}
           />
 
         </section>
