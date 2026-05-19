@@ -11,6 +11,8 @@ import StatsCards from './components/StatsCards/StatsCards'
 
 import Pagination from './components/Pagination/Pagination'
 
+import PlayerCard from './components/PlayerCard/PlayerCard'
+
 function App(){
 
   const [players, setPlayers] = useState(playersData)
@@ -26,6 +28,10 @@ function App(){
   const [highlightEven, setHighlightEven] = useState(false)
 
   const [highlightOdd, setHighlightOdd] = useState(false)
+
+  const [lightMode, setLightMode] = useState(false)
+
+  const [selectedPlayer, setSelectedPlayer] = useState(null)
 
   const toggleFavorite = (id) => {
 
@@ -96,11 +102,26 @@ function App(){
 
   return(
 
-    <main className="dashboard">
+    <main className={`dashboard ${
+      lightMode ? 'dashboard--light' : ''
+    }`}>
 
       <section className="dashboard__container">
 
         <Header />
+
+        <div className="theme-toggle">
+
+          <button
+            className="theme-toggle__button"
+            onClick={() => setLightMode(!lightMode)}
+          >
+
+    {lightMode ? '🌙 Dark' : '☀ Light'}
+
+  </button>
+
+</div>
 
         <section className="stats-panel">
 
@@ -114,6 +135,10 @@ function App(){
           <History
             history={history}
             clearHistory={clearHistory}
+          />
+
+          <PlayerCard
+            selectedPlayer={selectedPlayer}
           />
 
           <div className="table-actions">
@@ -154,6 +179,8 @@ function App(){
             toggleFavorite={toggleFavorite}
             highlightEven={highlightEven}
             highlightOdd={highlightOdd}
+            setSelectedPlayer={setSelectedPlayer}
+            setSelectedPlayer
           />
 
           <Pagination

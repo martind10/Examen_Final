@@ -40,6 +40,11 @@ function PlayersTable({
 
               <tr 
               key={player.id} 
+
+              onClick={() =>
+                setSelectedPlayer(player)
+              }
+
               className={` 
                 ${
                     highlightEven && player.id % 2 === 0

@@ -177,7 +177,7 @@ body{
 }
 
 .stat-card--history{
-  width: 100%;
+  min-height: 220px;
 }
 
 .stat-card__history-top{
@@ -217,7 +217,7 @@ body{
 
 .stats-panel__cards{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
   margin-bottom: 30px;
 }
@@ -466,4 +466,47 @@ body{
     flex-wrap: wrap;
   }
 
+}
+
+.theme-toggle{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.theme-toggle__button{
+  background: #f7b500;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.dashboard--light{
+  background: #f4f4f4;
+}
+
+.dashboard--light .stats-panel,
+.dashboard--light .dashboard__header{
+  background: white;
+}
+
+.dashboard--light .players-table td{
+  background: #ffffff;
+}
+
+.dashboard--light .players-table th{
+  color: white;
+}
+
+.player-card{
+  background: rgba(255,255,255,0.06);
+  border-radius: 24px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.player-card__name{
+  color: #f7b500;
+  margin-bottom: 20px;
 }
